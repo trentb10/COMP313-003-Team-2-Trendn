@@ -1,1 +1,1 @@
-# COMP313-003-Team-2-Trendn
+The github repository for the COMP313 Trendn project.
