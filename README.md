@@ -1,1 +1,1 @@
-# Comp313-003-Team-2-Trendn
+# COMP313-003-Team-2-Trendn
