@@ -1,1 +1,66 @@
-<mxfile host="app.diagrams.net" modified="2021-02-11T00:32:15.434Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.63" etag="Ok20fK3k37gtLHMMYN6_" version="14.3.0" type="device"><diagram id="ZOGDau6fcGYZhB1DXoZ5" name="Page-1">zZbBjpswEIafhmMlwEt2e2zTJdlDpahR27OBCVgyDDLOAn36jrEh0GyUtKp295KMf4/H9v/ZTjy2LruN4nXxFTOQXuhnnce+eGEYBA8RfRmlt8rq3rdCrkTmkk7CXvwCJ45pR5FBs0jUiFKLeimmWFWQ6oXGlcJ2mXZAuZy15jmcCfuUy3P1p8h0YdWHyD/pWxB5Mc4c+K6n5GOyE5qCZ9jOJPbosbVC1DYquzVIY97oix0XX+idFqag0rcMQNbLp02/SXbbnUzuWyX2dx9clWcuj27DXriSVO9zQkFugi2WMLjkOmiGqW9KVpeVT8MqDsD1UUFmQt4UAitjie4lwbX2mNguoS2Ehn3NU9Nu6VxRlUKXkloBhbypLemD6KigmXPYAygN3UVzgslyOqtAe9KqpxQ34G48b+Mxdc12xtxJxQz3qHF3yvKp8AkEBY7FX3Bh17l8ryVy8jPeYaPntq54aRyrkqa2QP5s34DxB1QZKnOvuAFV2yl0AQt+Vn57ehMuRy94AV8QvMBvEv87wOg6wG9Q4rMx1AKM4wngDYBiVOXwFtKHGgtZPg7WQaHJkOJ9MIrYu2O0us4oFlKD+tenbxx9dnFSiSTRy+cnvBkeRXuflCAi4VpxLaqcgoqXcH6B3x4m+xi9Hkxqnn4lh77Zfw32+Bs=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2021-02-12T00:50:17.411Z" agent="5.0 (X11)" etag="b5KDR7hCT-wO72BLBm36" version="14.3.1" type="github">
+  <diagram id="ZOGDau6fcGYZhB1DXoZ5" name="Page-1">
+    <mxGraphModel dx="1233" dy="1621" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="o3ylIGyGbPHPlb7wriS4-1" target="bZ5c2kXkyiVUN3aaywvR-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425" y="190" />
+              <mxPoint x="425" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o3ylIGyGbPHPlb7wriS4-1" value="&lt;b&gt;Homepage&lt;/b&gt;&lt;br&gt;&lt;br&gt;All featured fashion styles" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="370" y="-80" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o3ylIGyGbPHPlb7wriS4-3" value="&lt;div&gt;&lt;b&gt;Upload/Post fashion &lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/div&gt;Vendor can post the fashion post" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="150" y="120" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o3ylIGyGbPHPlb7wriS4-5" value="&lt;div&gt;&lt;b&gt;Remove Post/Fashion&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;Form to remove the post from list" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="560" y="140" width="111" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o3ylIGyGbPHPlb7wriS4-6" value="&lt;b&gt;Filter&lt;/b&gt;&lt;br&gt;&lt;br&gt;Filter the fashion clothes based on price,rating,name&amp;nbsp;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="357" y="790" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-1" value="&lt;h1 align=&quot;left&quot;&gt;Low Fidility Diagram For Admin&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="-100" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-2" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="o3ylIGyGbPHPlb7wriS4-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="30" as="sourcePoint" />
+            <mxPoint x="195" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.455;entryY=0.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="o3ylIGyGbPHPlb7wriS4-1" target="o3ylIGyGbPHPlb7wriS4-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430" y="40" as="sourcePoint" />
+            <mxPoint x="339.98" y="121.31999999999994" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-5" value="&lt;div&gt;&lt;b&gt;Modify Post/Fashion&lt;/b&gt;&lt;/div&gt;&lt;br&gt;Form to modify&amp;nbsp; the post from list" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="370" y="190" width="111" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bZ5c2kXkyiVUN3aaywvR-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="412" y="790" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="412" y="780" />
+              <mxPoint x="412" y="780" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-8" value="&lt;b&gt;Homepage&lt;/b&gt;&lt;br&gt;&lt;br&gt;All featured fashion styles" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="357" y="510" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bZ5c2kXkyiVUN3aaywvR-10" value="" style="endArrow=classic;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="407" y="620" as="sourcePoint" />
+            <mxPoint x="192" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
