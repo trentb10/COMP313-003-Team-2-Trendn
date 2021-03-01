@@ -2,10 +2,10 @@
 const config = require('./config');
 const express = require('express');
 const morgan = require('morgan');
-const compress = require('compression');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const passport = require('passport');
 
 // Define the Express configuration method
 module.exports = function () {
@@ -36,6 +36,20 @@ module.exports = function () {
         resave: true,
         secret: config.sessionSecret // secret used to sign the session ID cookie
     }));
+
+ passport.serializeUser(function(user, done) {
+      done(null, user.id);
+  });
+
+    passport.deserializeUser(function(id, done) {
+const User =  require('mongoose').model('User');
+      User.findById(id, function(err, user) {
+        done(err, user);
+    });
+  });    
+    app.use(passport.initialize());
+    app.use(passport.session());
+    require('./strategies/local.js')(); //include the local strategy config file
 
     // Set the application view engine and 'views' folder
     app.set('views', './app/views');
