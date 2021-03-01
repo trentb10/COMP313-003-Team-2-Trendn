@@ -6,5 +6,8 @@ module.exports = function (app) {
         // Display index
         res.render('index');
     });
+    app.get('/', (req, resp) => {
+    	resp.render("home.ejs");
+    })
 
 };
