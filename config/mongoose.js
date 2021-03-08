@@ -14,8 +14,9 @@ module.exports = function() {
 		console.log('Error');
 		});
 
-	// Load the 'User' model 
+	// Load the model 
 	require('../app/models/user.server.model');
+	require('../app/models/fashionPost.server.model');
 
 	// Return the Mongoose connection instance
 	return db;
