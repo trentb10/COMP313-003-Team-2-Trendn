@@ -1,22 +1,8 @@
-const passport = require('passport');
+// Load the 'index' controller
 const index = require('../controllers/index.server.controller');
-const users= require('../controllers/user.server.controller');
 
-module.exports = (app) => {
-    // Load controller
-    app.get('/', function (req, res) {
-        // Display index
-        res.render('index');
-    });
-    app.route('/sign-up')
-    .get(users.renderSignup)
-    .post(users.signup);
-
-    app.route('/sign-in')
-    .get(users.renderSignin)
-    .post(passport.authenticate('local', {
-    	successRedirect: '/',
-    	failureRedirect: '/sign-in'
-    }));
-    app.get('/sign-out', users.signout);
+// Define the routes module' method
+module.exports = function(app) {
+	// Mount the 'index' controller's 'render' method
+	app.get('/', index.render);
 };
