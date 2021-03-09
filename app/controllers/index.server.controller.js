@@ -10,11 +10,10 @@ exports.render = function (req, res) {
 
 
 exports.home = function(req,res) {
-    console.log("home page")
-    //filter the top fashion post and display it 
-	res.render('home', {
-		userFullName: req.user ?  req.user.username : ''
-	});
+    FashionPost.find({}, (err ,list) => {
+        console.log(list[0])
+        res.render("home", {"post": list, "userFullName": req.user ? req.user.username : ' '} );
+    });
 };
 
 exports.renderUploadForm = function(req,res) {
