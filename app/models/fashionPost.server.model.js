@@ -6,8 +6,6 @@ const Schema = mongoose.Schema;
 const FashionSchema= new Schema({
     category: {
         type: String,
-        enum: ['men', 'women','kids'],
-        default: 'men'
     },
     price: Number,
     brand: String,
@@ -16,7 +14,6 @@ const FashionSchema= new Schema({
     rating: Number,
     size : {
         type: String,
-        enum: ['S','M','L','XL']
     },
     reviews: String,
     //TODO: store  a image 

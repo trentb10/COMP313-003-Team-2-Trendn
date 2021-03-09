@@ -30,7 +30,6 @@ a {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    font-family: "Major Mono Display";
     align-items: center;
     justify-content: space-between;
 }
@@ -205,25 +204,39 @@ a {
 </style>
 
 <nav class="navbar">
-  <div class="container">
+    <div class="container">
 
-    <div class="navbar-header">
-      <button class="navbar-toggler" data-toggle="open-navbar1">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a href="/">
-        <h4>Trend<span>N</span></h4>
-      </a>
-    </div>
+        <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="open-navbar1">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="/">
+                <h4>Trend<span>N</span></h4>
+            </a>
+        </div>
 
-    <div class="navbar-menu" id="open-navbar1">
-      <ul class="navbar-nav">
-        <li> <a href="#">Home</a></li>
-        <li> <a href="/sign-in"><u>Sign In Or Sign Up</u></a></li>
-        <li> <a href="#">About</a></li>
-      </ul>
+        <div class="navbar-menu" id="open-navbar1">
+            <ul class="navbar-nav">
+                <li> <a href="/home">Home</a></li>
+                <% if ( userFullName ) { %>
+                <li>
+                    <a> Hello <%=userFullName%> </a>
+                </li>
+                <li> 
+                    <a href="/signout">Sign out</a> 
+                </li>
+                <% } else { %>
+                <li>
+                    <a href="/sign-in">Sign In or Sign Up</a>
+                </li>
+                <% } %>
+                <li> <a href="#">About</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
+
+
+Display the featured list 
