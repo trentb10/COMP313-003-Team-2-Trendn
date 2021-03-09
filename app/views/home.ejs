@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="public/css/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -250,7 +250,7 @@ Display the featured list
 
 <div class="container">
     <div class="m-4 text-center">
-        <img src="/images/logo.svg" alt="">
+        <!-- <img src="public/images/logo.svg" alt="">  no logo.svg file in img or images folder -->
         <p class="text-white">Lifestyle | Fashion | Travel</p>
 
     </div>
@@ -266,7 +266,7 @@ Display the featured list
    <% for(var i=0; i<post.length; i++) { %>
    <div class="max-w-sm mx-4 bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
       <div id="header" class="flex items-center mb-4"> 
-          <img alt="avatar" class="w-20 rounded-full border-2 border-gray-300" src="uploads/<%= post[i].img %>" />
+          <img  class="w-20 rounded-full border-2 border-gray-300" src="uploads/<%= post[i].img %>" />
          <div id="header-text" class="leading-5 ml-6 sm">
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].brand%> </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].category%> </h4>

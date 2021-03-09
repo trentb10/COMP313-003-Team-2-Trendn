@@ -10,7 +10,6 @@ exports.render = function (req, res) {
 	});
 };
 
-
 exports.home = function(req,res) {
     FashionPost.find({}, (err ,list) => {
         console.log(list[0])
