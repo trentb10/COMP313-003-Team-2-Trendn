@@ -23,7 +23,7 @@ exports.renderUploadForm = function(req,res) {
 
 exports.uploadForm = function(req,res) {
     console.log("Req : " ,req );
-    //console.log(" Category : ",req.body.category);
+    console.log(" Category : ",req.file);
     const fashion = FashionPost(req.body);
     fashion.img  = req.file.originalname;
     console.log("New Fashion Post", fashion);
