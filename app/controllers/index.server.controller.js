@@ -24,8 +24,12 @@ exports.renderUploadForm = function(req,res) {
 exports.uploadForm = function(req,res) {
     console.log(" Category : ",req.body.category);
     const fashion = FashionPost(req.body);
-    //FashionPost.save(fashion);
+    console.log(" Price : ",fashion.rating);
     fashion.save();
-    res.send(fashion);
+
+    FashionPost.find({}, (err ,list) => {
+        console.log(list[0])
+        res.render("home", {"post": list, "userFullName": req.user ? req.user.username : ' '} );
+    });
 };
 
