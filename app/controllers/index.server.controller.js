@@ -1,4 +1,6 @@
-var FashionPost = require('mongoose').model('Fashion');
+//const multer = require('multer');
+//const upload = multer({dest: '../public/uploads/'});
+const FashionPost = require('mongoose').model('Fashion');
 
 // Create a new 'render' controller method
 exports.render = function (req, res) {
@@ -12,7 +14,7 @@ exports.render = function (req, res) {
 exports.home = function(req,res) {
     FashionPost.find({}, (err ,list) => {
         console.log(list[0])
-        res.render("home", {"post": list, "userFullName": req.user.username } );
+        res.render("home", {"post": list, "userFullName": req.user? req.user.username  : ' '} );
     });
 };
 
@@ -21,14 +23,20 @@ exports.renderUploadForm = function(req,res) {
 };
 
 exports.uploadForm = function(req,res) {
-    console.log(" Category : ",req.body.category);
+    console.log("Req : " ,req );
+    //console.log(" Category : ",req.body.category);
     const fashion = FashionPost(req.body);
-    console.log(" Price : ",fashion.rating);
+    fashion.img  = req.file.originalname;
+    console.log("New Fashion Post", fashion);
     fashion.save();
 
+    res.redirect('/home');
+
+/*
     FashionPost.find({}, (err ,list) => {
         console.log(list[0])
         res.render("home", {"post": list, "userFullName": req.user ? req.user.username : ' '} );
     });
+    */
 };
 

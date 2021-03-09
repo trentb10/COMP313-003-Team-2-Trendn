@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #f6f5f7;
+    background: #cae3df;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,13 +93,12 @@ input {
 .container {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-    0 10px 10px rgba(0,0,0,0.22);
-position: relative;
-overflow: hidden;
-width: 768px;
-max-width: 100%;
-min-height: 480px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
 }
 
 .form-container {
@@ -267,22 +266,21 @@ min-height: 480px;
     <div class="form-container sign-in-container">
         <form action="/sign-in" method="post">
             <h1>Sign in</h1>
-            <span>or use your account</span>
             <input type="text" name="username" placeholder="Username" />
             <input type="password" name="password" placeholder="Password" />
-            <input type="submit" value="Sign In"/>
+            <button type="submit"> Sign In </button>
         </form>
     </div>
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-left">
                 <h1>Welcome Back!</h1>
-                <p>To keep connected with us please login with your personal info</p>
+                <p>To view the fashion catalog please login </p>
                 <button class="ghost" id="signIn">Sign In</button>
             </div>
             <div class="overlay-panel overlay-right">
-                <h1>Hello, Friend!</h1>
-                <p>Enter your personal details and start journey with us</p>
+                <h1>Welcome 2 TrendN!</h1>
+                <p>Create an account to browse through various fashions posts and catalog</p>
                 <button class="ghost" id="signUp">Sign Up</button>
             </div>
         </div>
