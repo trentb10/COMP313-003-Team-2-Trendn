@@ -16,7 +16,7 @@ const FashionSchema= new Schema({
         type: String,
     },
     reviews: String,
-    //TODO: store  a image 
+    img: String
 });
 
 // Configure the 'UserSchema' to use getters and virtuals when transforming to JSON
