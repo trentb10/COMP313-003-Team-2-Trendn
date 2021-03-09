@@ -1,9 +1,9 @@
-
 <link rel="stylesheet" href="/css/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
@@ -247,18 +247,13 @@ a {
 
 
 Display the featured list 
-
-<div class="container">
-    <div class="m-4 text-center">
-        <img src="/images/logo.svg" alt="">
-        <p class="text-white">Lifestyle | Fashion | Travel</p>
-
-    </div>
-    <div class="row mb-3">
-        <a href="/upload" class="btn btn-success d-flex align-items-center"><i
-                class="material-icons mr-2">add_circle</i>
-            New Fashion Post</a>
-    </div>
+<br>
+<br>
+<div class="row mb-3">
+    <a href="/upload" class="btn btn-success d-flex align-items-center"><i
+            class="material-icons mr-2">add_circle</i>
+        New Fashion Post</a>
+</div>
 
 
 <div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
@@ -268,14 +263,32 @@ Display the featured list
       <div id="header" class="flex items-center mb-4"> 
          <img alt="avatar" class="w-20 rounded-full border-2 border-gray-300" src="https://picsum.photos/seed/picsum/200" />
          <div id="header-text" class="leading-5 ml-6 sm">
+                    
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].brand%> </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].category%> </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].price %> </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].quantity%> </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].size %> </h4>
+
         </div>
+        <!-- display more button -->
+        <div class="more position-relative" style="cursor: pointer;">
+         <!-- options list -->
+         <div class="options card rounded-pill shadow-sm p-1 position-absolute">
+             <a href="#edit " class="rounded-circle p-2 mb-2"
+                 style="background:blue;">
+                 <i class="material-icons" style="color:white">create</i>
+             </a>
+             <form action="#delete" method="POST">
+                 <button class="rounded-circle p-2 bg-danger">
+                     <i class="material-icons" style="color:white">delete</i>
+                 </button>
+             </form>
+         </div>
+     </div>
       </div>
    </div>
+   
    <% } %>
    <!-- End of component -->
 </div>
