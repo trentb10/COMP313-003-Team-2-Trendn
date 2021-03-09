@@ -220,12 +220,12 @@ a {
         <div class="navbar-menu" id="open-navbar1">
             <ul class="navbar-nav">
                 <li> <a href="/home">Home</a></li>
-                <% if ( userFullName ) { %>
+                <% if ( userFullName) { %>
                 <li>
                     <a> Hello <%=userFullName%> </a>
                 </li>
                 <li> 
-                    <a href="/signout">Sign out</a> 
+                    <a href="/sign-out">Sign out</a> 
                 </li>
                 <% } else { %>
                 <li>

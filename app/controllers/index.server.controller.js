@@ -12,7 +12,7 @@ exports.render = function (req, res) {
 exports.home = function(req,res) {
     FashionPost.find({}, (err ,list) => {
         console.log(list[0])
-        res.render("home", {"post": list, "userFullName": req.user ? req.user.username : ' '} );
+        res.render("home", {"post": list, "userFullName": req.user.username } );
     });
 };
 
