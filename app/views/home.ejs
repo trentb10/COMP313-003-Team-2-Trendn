@@ -1,4 +1,9 @@
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
@@ -227,7 +232,7 @@ a {
                     <a> Hello <%=userFullName%> </a>
                 </li>
                 <li> 
-                    <a href="/signout">Sign out</a> 
+                    <a href="/sign-out">Sign out</a> 
                 </li>
                 <% } else { %>
                 <li>
@@ -243,6 +248,17 @@ a {
 
 Display the featured list 
 
+<div class="container">
+    <div class="m-4 text-center">
+        <img src="/images/logo.svg" alt="">
+        <p class="text-white">Lifestyle | Fashion | Travel</p>
+
+    </div>
+    <div class="row mb-3">
+        <a href="/upload" class="btn btn-success d-flex align-items-center"><i
+                class="material-icons mr-2">add_circle</i>
+            New Fashion Post</a>
+    </div>
 
 
 <div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
