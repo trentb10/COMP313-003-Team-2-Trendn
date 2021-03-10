@@ -1,5 +1,4 @@
 
-<link rel="stylesheet" href="public/css/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -281,14 +280,13 @@ Display the featured list
         <div class="more position-relative" style="cursor: pointer;">
          <!-- options list -->
          <div class="options card rounded-pill shadow-sm p-1 position-absolute">
-             <a href="#edit " class="rounded-circle p-2 mb-2"
-                 style="background:blue;">
+             <a href="/edit" class="rounded-circle p-2 mb-2" style="background:blue;">
                  <i class="material-icons" style="color:white">create</i>
              </a>
-             <form action="#delete" method="POST">
-                 <button class="rounded-circle p-2 bg-danger">
-                     <i class="material-icons" style="color:white">delete</i>
-                 </button>
+             <form action="home/<%= post[i]._id%>?_method=DELETE" method="POST">
+                <button class="rounded-circle p-2 bg-danger">
+                    <i class="material-icons" style="color:white">delete</i>
+                </button>
              </form>
          </div>
      </div>

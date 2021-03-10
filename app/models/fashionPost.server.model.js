@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 // Define a new 'UserSchema'
 const FashionSchema= new Schema({
+    postid: mongoose.Schema.Types.ObjectId,
     category: {
         type: String,
     },
