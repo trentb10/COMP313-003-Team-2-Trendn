@@ -53,6 +53,12 @@ exports.uploadForm = function(req, res) {
     res.redirect('/home');
 };
 
+let file= { };
+exports.updateImage = function(req,res) {
+    file = req.file;
+    console.log(file);
+}
+
 exports.displayPostById = function(req, res) {
     // Use the 'response' object to send a JSON response
     console.log( "DisplayPostById " ,req.params.postId);
@@ -80,17 +86,19 @@ exports.displayPostById = function(req, res) {
 //update a task by task id
 
 exports.updatePostById = function (req, res, next) {
-    console.log("Request file " , req.file);
-
+    console.log("Request file " , file);
     console.log("request body ", req.body);
     console.log("request params ", req.params);
-    let query = {"postId": req.params.postId};
+
     console.log("UpdatePostById ", req.params.postId);
 
+    let query = {"postId": req.params.postId};
+
+    req.body.img = file.originalname;
 
     // Use the 'Task' static 'findOneAndUpdate' method 
     // to update a specific task by task id
-    FashionPost.findOneAndUpdate(query, req.body, (err, task) => {
+    FashionPost.findOneAndUpdate(query,  req.body , (err, task) => {
         if (err) {
             console.log(err);
             // Call the next middleware with an error message

@@ -25,6 +25,8 @@ module.exports = function(app) {
 
     app.post('/upload',upload.single('img') ,index.uploadForm);
 
+    app.post('/upload/:postId',upload.single('img') ,index.updateImage);
+
     app.get('/get/:postId', index.displayPostById);
 
     app.route('/update/:postId')
