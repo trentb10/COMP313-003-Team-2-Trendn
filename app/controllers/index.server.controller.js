@@ -5,8 +5,19 @@ const FashionPost = require('mongoose').model('Fashion');
 // Create a new 'render' controller method
 exports.render = function(req, res) {
     console.log("User Logged in ", req.user)
-    res.render('index', {
-        userFullName: req.user ? req.user.username : ''
+
+    FashionPost.find({})
+    .sort("rating")
+    .exec(function(err,posts) {
+        if(err) {
+            console.log(err);
+        }
+        else {
+            res.render('index', {
+                userFullName: req.user ? req.user.username : '',
+                "post": posts
+            });
+        }
     });
 };
 exports.home = function(req, res) {
@@ -45,7 +56,16 @@ exports.renderUploadForm = function(req, res) {
 exports.uploadForm = function(req, res) {
     console.log("Req : ", req);
 
-    const fashion = FashionPost(req.body);
+    const fashion = new  FashionPost();
+
+    fashion.price = req.body.price;
+    fashion.category = req.body.category;
+    fashion.brand = req.body.brand;
+    fashion.quantity = req.body.quantity;
+    fashion.rating = req.body.rating;
+    fashion.size = req.body.size ;
+    fashion.style = req.body.style ;
+
     fashion.img = req.file.originalname;
     console.log("New Fashion Post", fashion);
     fashion.save();
@@ -105,7 +125,7 @@ exports.updatePostById = function (req, res, next) {
             return next(err);
         } else {
             console.log("post " ,task);
-        
+
             // Use the 'response' object to send a JSON response
             res.redirect('/home'); //display all tasks
         }
