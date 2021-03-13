@@ -1,9 +1,6 @@
 <%- include("header.ejs") %>
 
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
-
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
     h1, button {
@@ -21,14 +18,16 @@
 <br>
 <br>
 <br>
+
   <div class="flex form items-center h-screen w-full bg-teal-lighter">
   <div class="w-full bg-white rounded shadow-lg p-8 m-4">
-    <h1 class="block w-full text-center text-lg font-bold text-grey-darkest mb-6"> Add Fashion Post </h1>
-    <form class="mb-4" action="/upload" method="post" enctype="multipart/form-data">
+    <h1 class="block w-full text-center text-lg font-bold text-grey-darkest mb-6"> Update Fashion Post </h1>
 
+    <form class="mb-4" action="/update/<%= post.postId %>?_method=PUT" method="POST" >
+ 
       <div class="flex flex-col mb-4">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > ID </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="number" name="postId" >
+        <input class="border py-2 px-3 text-grey-darkest" type="number" name="postId" value="<%= post.postId %>" >
       </div>
 
 
@@ -52,37 +51,41 @@
 
       <div class="flex flex-col mb-4">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > Image </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="file" name="img" >
+        <input class="border py-2 px-3 text-grey-darkest" type="file" name="img" value="<%= post.img %>" >
       </div>
 
       <div class="flex flex-col mb-4">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > Brand  </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="text" name="brand">
+        <input class="border py-2 px-3 text-grey-darkest" type="text" name="brand" value="<%= post.brand %>">
       </div>
 
       <div class="flex flex-col mb-4">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" >Quantity </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="number" name="quantity">
+        <input class="border py-2 px-3 text-grey-darkest" type="number" name="quantity" value="<%= post.quantity %>" />
       </div>
 
       <div class="flex flex-col mb-6">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > Price </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="number" name="price" >
+        <input class="border py-2 px-3 text-grey-darkest" type="number" name="price" value="<%= post.price %>" >
       </div>
 
       <div class="flex flex-col mb-6">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" >Rating </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="number" name="rating" >
+        <input class="border py-2 px-3 text-grey-darkest" type="number" name="rating" value="<%= post.rating %>" >
       </div>
 
       <div class="flex flex-col mb-6">
         <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > Style  </label>
-        <input class="border py-2 px-3 text-grey-darkest" type="text" name="style" >
+        <input class="border py-2 px-3 text-grey-darkest" type="text" name="style" value="<%= post.style %>" >
       </div>
 
       <button class="block bg-black uppercase text-lg mx-auto p-4 rounded" type="submit">
-          Upload Fashion Post  
+          Update Post
       </button>
     </form>
   </div>
 </div>
+
+
+
+

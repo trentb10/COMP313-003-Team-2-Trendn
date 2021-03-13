@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // Define a new 'FashionSchema'
 const FashionSchema= new Schema({
-    id: { type: String, unique: true, required:true },
+    postId: { type: String, unique: true, required:true },
     category: {
         type: String,
     },

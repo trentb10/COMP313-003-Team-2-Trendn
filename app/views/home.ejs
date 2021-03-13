@@ -19,7 +19,7 @@ body {
     background: #edfafe;
 }
 
-a {
+a, .edit-button {
     text-decoration: none;
 }
 
@@ -277,40 +277,53 @@ Display the featured list
             New Fashion Post</a>
     </div>
     
-<div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
+    <div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
 
-   <!-- Start of component -->
-   <% for(var i=0; i<post.length; i++) { %>
-   <div class="max-w-sm mx-4 bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
-      <div id="header" class="flex items-center mb-4"> 
-          <img  class="w-20 rounded-full border-2 border-gray-300" src="uploads/<%= post[i].img %>" />
-         <div id="header-text" class="leading-5 ml-6 sm">
-            
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].id %>. </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].brand%> </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].category%> </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].price %> $ </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].quantity%> in stock </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].size %> </h4>
-            <h4 id="name" class="text-xl font-semibold"> <%= post[i].style %> </h4>
+        <!-- Start of component -->
+        <% for(var i=0; i<post.length; i++) { %>
+        <div class="max-w-sm mx-4 bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
+            <div id="header" class="flex items-center mb-4"> 
+                <img  class="w-20 rounded-full border-2 border-gray-300" src="uploads/<%= post[i].img %>" />
+                <div id="header-text" class="leading-5 ml-6 sm">
+
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].postId %> </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].brand %> </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].category %> </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].price %> $ </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].quantity %> in stock </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].size %> </h4>
+                    <h4 id="name" class="text-xl font-semibold"> <%= post[i].style %> </h4>
+                </div>
+                <!-- display more button -->
+                <div class="more position-relative" style="cursor: pointer;">
+                    <!-- options list -->
+                    <div class="options card rounded-pill shadow-sm p-1 position-absolute">
+                        <form method="GET" action="/get/<%= post[i]._id%>">
+                            <button class="rounded-circle p-2 mb-2" style="background:magenta;">
+                                <i class="material-icons" style="color:white">edit</i>
+                            </button>
+                        </form>
+
+                        <!-- <a href="/edit/<%= post[i].postId %>"> Display </a>
+
+
+                        <form method="PUT" action="/edit/<%= post[i].postId %>?_method=PUT">
+                            <button class="rounded-circle p-2 mb-2" style="background:blue;">
+                                <i class="material-icons" style="color:white"> assignment </i>
+                            </button>
+                        </form>
+                        -->
+
+                        <form action="home/<%= post[i]._id%>?_method=DELETE" method="POST">
+                            <button class="rounded-circle p-2 bg-danger">
+                                <i class="material-icons" style="color:white">delete</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- display more button -->
-        <div class="more position-relative" style="cursor: pointer;">
-         <!-- options list -->
-         <div class="options card rounded-pill shadow-sm p-1 position-absolute">
-             <a href="/edit" class="rounded-circle p-2 mb-2" style="background:blue;">
-                 <i class="material-icons" style="color:white">create</i>
-             </a>
-             <form action="home/<%= post[i]._id%>?_method=DELETE" method="POST">
-                <button class="rounded-circle p-2 bg-danger">
-                    <i class="material-icons" style="color:white">delete</i>
-                </button>
-             </form>
-         </div>
-     </div>
-      </div>
-   </div>
-   
-   <% } %>
-   <!-- End of component -->
-</div>
+
+        <% } %>
+        <!-- End of component -->
+    </div>
