@@ -226,7 +226,7 @@ a {
 
         <div class="navbar-menu" id="open-navbar1">
             <ul class="navbar-nav">
-                <li> <a href="/home">Home</a></li>
+                <li> <a href="/home">Products</a></li>
                 <% if ( userFullName ) { %>
                 <li>
                     <a> Hello <%=userFullName%> </a>
@@ -248,6 +248,23 @@ a {
 
 Display the featured list 
 
+
+<div class="container">
+    <form id="search-product">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for product...">
+    </form>
+</div>
+<div class="container">
+    <input type="checkbox" id="filter" name="bohemian" value="bohemian">
+    <label for="bohemian">Bohemian</label><br>
+    <input type="checkbox" id="filter" name="formal" value="formal">
+    <label for="formal">Formal</label><br>
+    <input type="checkbox" id="filter" name="afropunk" value="afropunk">
+    <label for="bohemian">Afropunk</label><br>
+    <input type="checkbox" id="filter" name="emo" value="emo">
+    <label for="bohemian">Emo</label><br>
+    <input type="submit" value=Filter>
+</div>
 <div class="container">
     <div class="m-4 text-center">
         <!-- <img src="public/images/logo.svg" alt="">  no logo.svg file in img or images folder -->
@@ -259,9 +276,9 @@ Display the featured list
                 class="material-icons mr-2">add_circle</i>
             New Fashion Post</a>
     </div>
-
-
+    
 <div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
+
    <!-- Start of component -->
    <% for(var i=0; i<post.length; i++) { %>
    <div class="max-w-sm mx-4 bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
@@ -275,8 +292,7 @@ Display the featured list
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].price %> $ </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].quantity%> in stock </h4>
             <h4 id="name" class="text-xl font-semibold"> <%= post[i].size %> </h4>
-            
-
+            <h4 id="name" class="text-xl font-semibold"> <%= post[i].style %> </h4>
         </div>
         <!-- display more button -->
         <div class="more position-relative" style="cursor: pointer;">

@@ -17,6 +17,8 @@ exports.home = function(req,res) {
     });
 };
 
+
+
 exports.renderUploadForm = function(req,res) {
     res.render('upload-fashion-post', { userFullName: req.user ? req.user.username : ' '});
 };
