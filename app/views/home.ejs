@@ -1,259 +1,19 @@
-
+<%- include("header.ejs") %>
+<!-- Bootstrap , Material Icon and Tailwind css cdn  -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    font-family: "Major Mono Display" ;
-    font-size: 0.925rem;
-    background: #edfafe;
-}
-
-a, .edit-button {
-    text-decoration: none;
-}
-
-.container {
-    width: 1170px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.navbar,
-.navbar .container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-}
-    @media (max-width: 768px) {
-        .navbar,
-        .navbar .container {
-            display: block;
-        }
-    }
-
-    .navbar {
-        padding: 1.15rem 1rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.035);
-        background-color: #fff;
-    }
-    @media (min-width: 576px) {
-        .navbar .container {
-            max-width: 540px;
-        }
-    }
-    @media (min-width: 768px) {
-        .navbar .container {
-            max-width: 720px;
-        }
-    }
-    @media (min-width: 992px) {
-        .navbar .container {
-            max-width: 960px;
-        }
-    }
-    @media (min-width: 1200px) {
-        .navbar .container {
-            max-width: 1140px;
-        }
-    }
-    .navbar .navbar-header {
-        display: flex;
-        align-items: center;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-header {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-direction: row-reverse;
-        }
-    }
-    .navbar .navbar-header .navbar-toggler {
-        border-radius: 5px;
-        background-color: transparent;
-        cursor: pointer;
-        border: none;
-        display: none;
-        outline: none;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-header .navbar-toggler {
-            display: block;
-        }
-    }
-    .navbar .navbar-header .navbar-toggler span {
-        height: 2px;
-        width: 22px;
-        background-color: #929aad;
-        display: block;
-    }
-    .navbar .navbar-header .navbar-toggler span:not(:last-child) {
-        margin-bottom: 0.2rem;
-    }
-    .navbar .navbar-header > a {
-        font-weight: 500;
-        color: #3c4250;
-    }
-    .navbar .navbar-menu {
-        display: flex;
-        flex-basis: auto;
-        flex-grow: 1;
-        align-items: center;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-menu {
-            display: none;
-            text-align: center;
-        }
-    }
-    .navbar .navbar-menu .navbar-nav {
-        margin-left: auto;
-        flex-direction: row;
-        display: flex;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-menu .navbar-nav {
-            width: 100%;
-            display: block;
-            border-top: 1px solid #EEE;
-            margin-top: 1rem;
-        }
-    }
-    .navbar .navbar-menu .navbar-nav > li > a {
-        color: #3c4250;
-        text-decoration: none;
-        display: inline-block;
-        padding: 0.5rem 1rem;
-    }
-    .navbar .navbar-menu .navbar-nav > li > a:hover {
-        color: #66f;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-menu .navbar-nav > li > a {
-            border-bottom: 1px solid #EEE;
-        }
-    }
-    .navbar .navbar-menu .navbar-nav > li.active a {
-        color: #66f;
-    }
-    .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
-        list-style: none;
-        position: absolute;
-        top: 150%;
-        left: 0;
-        background-color: #fff;
-        padding: 0.5rem 0;
-        min-width: 160px;
-        width: auto;
-        white-space: nowrap;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-        z-index: 99999;
-        border-radius: 0.75rem;
-        display: none;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown {
-            position: relative;
-            box-shadow: none;
-        }
-    }
-    .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown li a {
-        color: #3c4250;
-        padding: 0.25rem 1rem;
-        display: block;
-    }
-    .navbar .navbar-menu .navbar-nav .navbar-dropdown .dropdown.show {
-        display: block !important;
-    }
-    .navbar .navbar-menu .navbar-nav .dropdown > .separator {
-        height: 1px;
-        width: 100%;
-        margin: 9px 0;
-        background-color: #eee;
-    }
-    .navbar .navbar-dropdown {
-        position: relative;
-    }
-
-    .navbar .navbar-header > a span {
-        color: #66f;
-    }
-
-    .navbar .navbar-header h4 {
-        font-weight: 500;
-        font-size: 1.25rem;
-    }
-    @media (max-width: 768px) {
-        .navbar .navbar-header h4 {
-            font-size: 1.05rem;
-        }
-    }
-</style>
-
-<nav class="navbar">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button class="navbar-toggler" data-toggle="open-navbar1">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <a href="/">
-                <h4>Trend<span>N</span></h4>
-            </a>
-        </div>
-
-        <div class="navbar-menu" id="open-navbar1">
-            <ul class="navbar-nav">
-                <li> <a href="/home">Products</a></li>
-                <% if ( userFullName ) { %>
-                <li>
-                    <a> Hello <%=userFullName%> </a>
-                </li>
-                <li> 
-                    <a href="/sign-out">Sign out</a> 
-                </li>
-                <% } else { %>
-                <li>
-                    <a href="/sign-in">Sign In or Sign Up</a>
-                </li>
-                <% } %>
-                <li> <a href="#">About</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-Display the featured list 
-
+<!-- Home.css  -->
+<link rel="stylesheet" href="css/home.css">
 
 <div class="container">
     <form id="search-product">
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for product...">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for product...">
     </form>
 </div>
+
 <div class="container">
     <input type="checkbox" id="filter" name="bohemian" value="bohemian">
     <label for="bohemian">Bohemian</label><br>
@@ -267,25 +27,23 @@ Display the featured list
 </div>
 <div class="container">
     <div class="m-4 text-center">
-        <!-- <img src="public/images/logo.svg" alt="">  no logo.svg file in img or images folder -->
         <p class="text-white">Lifestyle | Fashion | Travel</p>
 
     </div>
     <div class="row mb-3">
-        <a href="/upload" class="btn btn-success d-flex align-items-center"><i
-                class="material-icons mr-2">add_circle</i>
-            New Fashion Post</a>
+        <a href="/upload" class="btn btn-success d-flex align-items-center">
+            <i class="material-icons mr-2">add_circle</i>
+            New Fashion Post
+        </a>
     </div>
     
     <div class="min-h-screen  flex  flex-row flex-wrap justify-center items-center">
 
-        <!-- Start of component -->
         <% for(var i=0; i<post.length; i++) { %>
         <div class="max-w-sm mx-4 bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-lg">
             <div id="header" class="flex items-center mb-4"> 
                 <img  class="w-20 rounded-full border-2 border-gray-300" src="uploads/<%= post[i].img %>" />
                 <div id="header-text" class="leading-5 ml-6 sm">
-
                     <h4 id="name" class="text-xl font-semibold"> <%= post[i].postId %> </h4>
                     <h4 id="name" class="text-xl font-semibold"> <%= post[i].brand %> </h4>
                     <h4 id="name" class="text-xl font-semibold"> <%= post[i].category %> </h4>
@@ -294,25 +52,13 @@ Display the featured list
                     <h4 id="name" class="text-xl font-semibold"> <%= post[i].size %> </h4>
                     <h4 id="name" class="text-xl font-semibold"> <%= post[i].style %> </h4>
                 </div>
-                <!-- display more button -->
                 <div class="more position-relative" style="cursor: pointer;">
-                    <!-- options list -->
                     <div class="options card rounded-pill shadow-sm p-1 position-absolute">
                         <form method="GET" action="/get/<%= post[i]._id%>">
                             <button class="rounded-circle p-2 mb-2" style="background:magenta;">
                                 <i class="material-icons" style="color:white">edit</i>
                             </button>
                         </form>
-
-                        <!-- <a href="/edit/<%= post[i].postId %>"> Display </a>
-
-
-                        <form method="PUT" action="/edit/<%= post[i].postId %>?_method=PUT">
-                            <button class="rounded-circle p-2 mb-2" style="background:blue;">
-                                <i class="material-icons" style="color:white"> assignment </i>
-                            </button>
-                        </form>
-                        -->
 
                         <form action="home/<%= post[i]._id%>?_method=DELETE" method="POST">
                             <button class="rounded-circle p-2 bg-danger">
@@ -325,5 +71,6 @@ Display the featured list
         </div>
 
         <% } %>
-        <!-- End of component -->
     </div>
+
+</div>

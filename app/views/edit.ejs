@@ -1,20 +1,5 @@
 <%- include("header.ejs") %>
-
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
-h1, button {
-    font-family: "Major Mono Display";
-}
-
-    .form {
-        padding-top: -10%; 
-    }
-
-    button {
-        color: lightblue;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="css/edit.css">
 <br>
 <br>
 <br>
@@ -22,8 +7,6 @@ h1, button {
 <div class="flex form items-center h-screen w-full bg-teal-lighter">
     <div class="w-full bg-white rounded shadow-lg p-8 m-4">
         <h1 class="block w-full text-center text-lg font-bold text-grey-darkest mb-6"> Update Fashion Post </h1>
-
-        <!-- <form class="mb-4" action="/update/<%= post.postId %>?_method=PUT" method="POST" > -->
 
         <form class="mb-4" action="/upload/<%= post.postId %>" method="post" enctype="multipart/form-data">
             <div class="flex flex-col mb-4">
@@ -42,7 +25,6 @@ h1, button {
                 <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" > ID </label>
                 <input class="border py-2 px-3 text-grey-darkest" type="number" name="postId" value="<%= post.postId %>" >
             </div>
-
 
             <div class="flex flex-col mb-4">
                 <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="first_name"> Category </label>
@@ -90,6 +72,7 @@ h1, button {
             <button class="block bg-black uppercase text-lg mx-auto p-4 rounded" type="submit">
                 Update Post
             </button>
+
         </form>
     </div>
 </div>
