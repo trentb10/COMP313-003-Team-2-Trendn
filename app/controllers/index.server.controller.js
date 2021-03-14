@@ -34,7 +34,7 @@ exports.findPostById = function(req, res, next, postId) {
     console.log("FindPostById")
     console.log(req.params)
     FashionPost.findOne({
-        postId: postId
+        _id: postId
     }, function(err, post) {
         if (err) {
             console.log(err);
@@ -96,15 +96,6 @@ exports.displayPostById = function(req, res) {
     });
 };
 
-// exports.updatePostById = function(req, res,next) {
-//     console.log("updating with _id",req.params.postId)
-//     let filter = req.body;
-//     console.log("UpdatePostById req.body ")
-//     console.log(req.body)
-//     res.json(filter);
-// };
-//update a task by task id
-
 exports.updatePostById = function (req, res, next) {
     console.log("Request file " , file);
     console.log("request body ", req.body);
@@ -112,7 +103,7 @@ exports.updatePostById = function (req, res, next) {
 
     console.log("UpdatePostById ", req.params.postId);
 
-    let query = {"postId": req.params.postId};
+    let query = {"_id": req.params.postId};
 
     req.body.img = file.originalname;
 
