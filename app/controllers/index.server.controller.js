@@ -1,5 +1,3 @@
-//const multer = require('multer');
-//const upload = multer({dest: '../public/uploads/'});
 const FashionPost = require('mongoose').model('Fashion');
 
 // Create a new 'render' controller method
@@ -20,6 +18,7 @@ exports.render = function(req, res) {
         }
     });
 };
+
 exports.home = function(req, res) {
     FashionPost.find({}, (err, list) => {
         console.log(list[0])
@@ -123,26 +122,34 @@ exports.updatePostById = function (req, res, next) {
     });
 };
 
-//update a survey by survey id
-exports.deleteById = function(req, res) {
-    //initialize findOneAndUpdate method arguments
-    var query = {
-        _id: req.params.id
-    };
+exports.renderDeleteForm = function(req,res) {
+    console.log( "Delete Post By ID" ,req.params.postId);
 
-    // Use the 'survey' static 'findOneAndUpdate' method 
-    // to update a specific survey by survey id
-    FashionPost.remove(query, (err, fashion) => {
+    FashionPost.findOne({
+        _id: req.params.postId
+    }, function(err, post) {
         if (err) {
-            console.log(err);
-            // Call the next middleware with an error message
-            return next(err);
+            console.log("cannot find one ");
         } else {
-            console.log(fashion);
-            // Use the 'response' object to send a JSON response
-            res.redirect('/home'); //display all surveys
+            res.render("delete", {
+                "post": post
+            })
         }
-    })
+    });
+}
+
+//update a survey by survey id
+exports.deletePostById = function(req, res) {
+    console.log("Delete post ", req.params.postId);
+    FashionPost.remove({_id: req.params.postId}, function(err,post){
+        if(err) { 
+            console.log("err");
+        }
+        else {
+            console.log("post deleted ");
+            res.redirect('/home');
+        }
+    });
 };
 
 exports.renderUpdate = function(req, res) {

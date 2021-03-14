@@ -60,9 +60,9 @@ integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ
                             </button>
                         </form>
 
-                        <form action="home/<%= post[i]._id%>?_method=DELETE" method="POST">
-                            <button class="rounded-circle p-2 bg-danger">
-                                <i class="material-icons" style="color:white">delete</i>
+                        <form method="GET" action="/delete/<%= post[i]._id%>">
+                            <button class="rounded-circle p-2 mb-2" style="background:cyan;">
+                                <i class="material-icons" style="color:black">delete</i>
                             </button>
                         </form>
                     </div>

@@ -29,6 +29,10 @@ module.exports = function(app) {
 
     app.get('/get/:postId', index.displayPostById);
 
+    app.get('/delete/:postId', index.renderDeleteForm);
+
+    app.post('/delete/:postId', index.deletePostById);
+
     app.route('/update/:postId')
     .put(index.updatePostById)
     .post(index.updatePostById);
