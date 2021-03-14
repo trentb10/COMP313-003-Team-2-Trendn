@@ -165,3 +165,23 @@ exports.renderUpdate = function(req, res) {
         });
     });
 };
+
+
+exports.filterPostByStyle = function(req,res) {
+    console.log(" Req Body", req.body);
+    var filter = req.body.filter.toLowerCase();
+    console.log("Filter ", filter)
+
+    FashionPost.find({
+       style: filter
+    }, function(err, post) {
+        if (err) {
+            console.log("cannot find one ");
+        } else {
+            console.log("Post found against filter ", post);
+            res.render("home", {
+                "post": post
+            })
+        }
+    });
+}

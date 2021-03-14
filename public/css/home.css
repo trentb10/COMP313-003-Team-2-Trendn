@@ -11,6 +11,10 @@ body {
     background: #edfafe;
 }
 
+form {
+    font-family: sans-serif ;
+}
+
 a, .edit-button {
     text-decoration: none;
 }

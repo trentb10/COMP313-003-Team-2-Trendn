@@ -27,6 +27,7 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(methodOverride());
 
+
     // Configure the 'session' middleware
     app.use(session({
         saveUninitialized: true,
