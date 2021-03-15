@@ -28,7 +28,7 @@ module.exports = function() {
         var FashionPost = mongoose.model('Fashion');
 
         var post1 = new FashionPost({
-            category: 'afropunk',
+            style: 'afropunk',
             price:100,
             rating:100,
             brand:"Hugo Boss",
@@ -42,7 +42,7 @@ module.exports = function() {
         });
 
         var post2 = new FashionPost({
-            category: 'bohemian',
+            style: 'bohemian',
             price:100,
             rating:100,
             brand:"Hugo Boss",
@@ -56,7 +56,7 @@ module.exports = function() {
         });
 
         var post3 = new FashionPost({
-            category: 'afropunk',
+            style: 'afropunk',
             price:100,
             rating:100,
             brand:"Forever 21",
@@ -69,7 +69,7 @@ module.exports = function() {
             else { console.log("post seeded to the mongodb");}
         });
         var post4 = new FashionPost({
-            category: 'afropunk',
+            style: 'afropunk',
             price:100,
             rating:100,
             brand:"Hugo Boss",
@@ -82,7 +82,7 @@ module.exports = function() {
             else { console.log("post seeded to the mongodb");}
         });
         var post5 = new FashionPost({
-            category: 'afropunk',
+            style: 'afropunk',
             price:100,
             rating:100,
             brand:"Forever 21",
