@@ -16,7 +16,7 @@ module.exports = function() {
 
 	// load the model 
 	require('../app/models/user.server.model');
-	require('../app/models/fashionpost.server.model');
+	require('../app/models/fashionPost.server.model');
 
     var conn = mongoose.connection;
 
